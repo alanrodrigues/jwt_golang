@@ -1,31 +1,32 @@
-### O que é? ###
+### O que Ã©? ###
 
-Exemplo de autenticação em GO utilizando Json Web Token (JWT)
+Exemplo de autenticaÃ§Ã£o em GO utilizando Json Web Token (JWT)
 
 ### Requisitos ###
 
-* GO instalado na máquina
-* MongoDB instalado na máquina
+* GO instalado na mÃ¡quina
+* MongoDB instalado na mÃ¡quina
 * Banco de Dados nomeado como jwt_golang_db
 
-### Execução ###
+### ExecuÃ§Ã£o ###
 
-* Instalar depedências GO: $ go get
+* Instalar depedÃªncias GO: $ go get
 * Build: $ go build
 * Executar: $ jwt_golang
 
-* Incluir um usuário na collection "users" > db.users.insert({"username":"user1", "password":"pass1"})
+* Incluir um usuÃ¡rio na collection "users" > db.users.insert({"username":"user1", "password":"pass1"})
 
 ### Funcionamento ###
 
-* Acesso à aplicação
+* /jwt-golang/auth POST <br />
+Header<br />
+ Content-Type: application/json<br />
+Body: {"username":"user1", "password":"pass1"}<br />
 
-/jwt-golang/auth POST 
-application/json
-{"username":"user1", "password":"pass1"}
+* /jwt-golang/secured/offers POST<br />
+Header<br />
+ Authorization: token from authentication endpoint<br />
+ Content-Type: application/json<br />
+Body: {"name":"offer 1"}<br />
 
-/jwt-golang/secured/offers POST 
-application/json
-{"name":"offer 1"}
-
-/jwt-golang/offers GET
+* /jwt-golang/offers GET
