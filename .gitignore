@@ -1,0 +1,5 @@
+avatar/*
+*.swp
+debug.txt
+errors.txt
+jwt_golang.exe
